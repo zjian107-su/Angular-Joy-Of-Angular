@@ -1,0 +1,6 @@
+<dd *ngFor="let item of data">
+  <div (click)="toggleExpand(item)">
+    {{item.children ? item.expanded ? '-' : '+' : ''}} {{item.name}}</div>
+
+  <app-recursive-nav-child *ngIf="item.children && item.expanded" [data]="item.children"></app-recursive-nav-child>
+</dd>

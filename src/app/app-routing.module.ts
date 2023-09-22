@@ -7,6 +7,11 @@ const routes: Routes = [
     path: 'recursive-nav',
     component: RecursiveNavComponent,
   },
+  {
+    path: '',
+    redirectTo: '/recursive-nav',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
