@@ -1,8 +1,7 @@
 <h1>Filtered City</h1>
 
-<input type="text" [(ngModel)]="filterString" id="filteredString" placeholder="Tampa">
-
-<button (click)="filter()">Filter</button>
+<input type="text" [(ngModel)]="filterString" id="filteredString" placeholder="Tampa"
+  (ngModelChange)="onChange($event)">
 
 <dl>
   <dd *ngFor="let city of filteredList">
