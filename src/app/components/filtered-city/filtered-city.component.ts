@@ -11,6 +11,7 @@ export class FilteredCityComponent {
   cityList: string[] = [];
   filteredList: string[] = [];
   filterString: string = '';
+  isLoading: boolean = false;
   filterClickSubject: Subject<string> = new Subject<string>();
 
   ngOnInit() {
@@ -21,11 +22,14 @@ export class FilteredCityComponent {
     this.filterClickSubject.pipe(debounceTime(1000)).subscribe({
       next: () => {
         this.filter();
+        this.isLoading = false;
       },
+      error: (message) => console.log(message),
     });
   }
 
   onChange(model: string) {
+    this.isLoading = true;
     this.filterClickSubject.next(model);
   }
 
