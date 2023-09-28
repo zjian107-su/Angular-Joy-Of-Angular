@@ -12,7 +12,6 @@ export class RecursiveNavComponent implements OnInit {
   ngOnInit(): void {
     fetchData().then((data) => {
       this.data = data;
-      console.log(this.data);
     });
   }
 }
