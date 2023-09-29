@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { RecursiveNavComponent } from './components/recursive-nav/recursive-nav.component';
 import { RecursiveNavChildComponent } from './components/recursive-nav/recursive-nav-child/recursive-nav-child.component';
 import { FilteredCityComponent } from './components/filtered-city/filtered-city.component';
+import { TodoComponent } from './components/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FilteredCityComponent } from './components/filtered-city/filtered-city.
     RecursiveNavComponent,
     RecursiveNavChildComponent,
     FilteredCityComponent,
+    TodoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
