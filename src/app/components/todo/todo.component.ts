@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import Todo from './todo';
+import { Todo, todos } from '../../data';
 
 @Component({
   selector: 'app-todo',
@@ -8,4 +8,13 @@ import Todo from './todo';
 })
 export class TodoComponent {
   todoItem: Todo = {} as Todo;
+  todoList: Todo[] = [];
+
+  ngOnInit() {
+    this.todoList = todos.slice(0, 30);
+  }
+
+  toggleComplete(todo: Todo): void {
+    todo.completed = !todo.completed;
+  }
 }
