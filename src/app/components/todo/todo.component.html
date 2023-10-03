@@ -1,21 +1,10 @@
 <div style="display: flex; flex-direction: row; gap: 2rem">
   <div>
     <dl>
-      <dt>Completed</dt>
       <dd *ngFor="let todo of todoList">
-        <div *ngIf="todo.completed===true">
-          <span (click)="toggleComplete(todo)">{{todo.title}}</span>
-        </div>
-      </dd>
-    </dl>
-  </div>
-  <div>
-    <dl>
-      <dt>Uncompleted</dt>
-      <dd *ngFor="let todo of todoList">
-        <div *ngIf="todo.completed===false">
-          <span (click)="toggleComplete(todo)">{{todo.title}}</span>
-        </div>
+        <span [ngStyle]="todo.completed? {'text-decoration': 'line-through'}:{'font-weight': 'bold'}"
+          (click)="toggleComplete(todo)">{{todo.title}}
+        </span>
       </dd>
     </dl>
   </div>
