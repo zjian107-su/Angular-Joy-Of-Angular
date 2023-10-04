@@ -9,9 +9,11 @@ import { Todo, todos } from '../../data';
 export class TodoComponent {
   todoItem: Todo = {} as Todo;
   todoList: Todo[] = [] as Todo[];
+  dataLimit: number = 30;
+  todoTitle: string = '';
 
   ngOnInit() {
-    this.todoList = todos.slice(0, 30);
+    this.todoList = todos.slice(0, this.dataLimit);
     let finalList: Todo[] = [] as Todo[];
     for (let currentTodo of this.todoList) {
       if (currentTodo.completed) {
@@ -35,5 +37,17 @@ export class TodoComponent {
       //move top when marked as incomplete
       this.todoList.unshift(todo);
     }
+  }
+
+  createTodo(): void {
+    let newTodo: Todo = {
+      userId: 1,
+      id: this.dataLimit + 1,
+      title: this.todoTitle,
+      completed: false,
+    };
+
+    this.todoList.unshift(newTodo);
+    this.todoTitle = '';
   }
 }
