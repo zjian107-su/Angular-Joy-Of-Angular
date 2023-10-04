@@ -1,5 +1,19 @@
 <h1>Filtered City</h1>
 
+<h2>
+  Description
+</h2>
+
+<p>
+  Some websites have a search bar that filters a list of cities. Implement this in Angular. You can use the list of
+  cities
+  below. Try reative programming with RxJS so that you set debounce time so you can't spam the "server".
+</p>
+
+<h2>
+  Result
+</h2>
+
 <div style="display: flex; flex-direction: row; gap: 2rem;">
 <input type="text" [(ngModel)]="filterString" id="filteredString" placeholder="Tampa"
   (ngModelChange)="onChange($event)" />
