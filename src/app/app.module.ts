@@ -8,6 +8,7 @@ import { RecursiveNavComponent } from './components/recursive-nav/recursive-nav.
 import { RecursiveNavChildComponent } from './components/recursive-nav/recursive-nav-child/recursive-nav-child.component';
 import { FilteredCityComponent } from './components/filtered-city/filtered-city.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { PalindromeComponent } from './components/palindrome/palindrome.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { TodoComponent } from './components/todo/todo.component';
     RecursiveNavChildComponent,
     FilteredCityComponent,
     TodoComponent,
+    PalindromeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
