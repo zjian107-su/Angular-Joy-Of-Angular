@@ -9,7 +9,7 @@
 <p>
   A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward as forward, such
   as
-  madam, racecar. Implement a palindrome checker. You can use the list of words below. When user input a panlindrome, it
+  madam, racecar. Implement a palindrome checker. You can use the list of words below. When user input a palindrome, it
   should show in the display area while highlighting the palindrome part as green.
 
 </p>
@@ -18,6 +18,8 @@
   Result
 </h2>
 
-<input type="text" placeholder="kayak" [(ngModel)]="inputWord">
+<input type="text" placeholder="kayak" [(ngModel)]="inputWord" (ngModelChange)="onChange($event)">
 
-<h3 [ngStyle]="isPalindrome(inputWord)? {'background-color': 'green'} :{'background-color': 'red'} ">{{inputWord}}</h3>
+<div *ngIf="isLoading" class="loading-spinner"></div>
+
+<h3 [ngStyle]="isWordPalindrome? {'background-color': 'green'} :{'background-color': 'red'} ">{{inputWord}}</h3>
