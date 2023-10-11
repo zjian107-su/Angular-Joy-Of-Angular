@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Todo, todos } from '../../data';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'app-todo',
@@ -11,6 +12,8 @@ export class TodoComponent {
   todoList: Todo[] = [] as Todo[];
   dataLimit: number = 30;
   todoTitle: string = '';
+
+  constructor(public todoService: TodoService) {}
 
   ngOnInit() {
     this.todoList = todos.slice(0, this.dataLimit);
@@ -24,6 +27,7 @@ export class TodoComponent {
     }
 
     this.todoList = finalList;
+    this.todoService.logger('TodoComponent initialized');
   }
 
   toggleComplete(todo: Todo): void {
