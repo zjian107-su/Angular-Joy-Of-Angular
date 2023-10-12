@@ -7,6 +7,7 @@ import { Todo, todos } from '../../data';
 export class TodoService {
   dataLimit: number = 30;
   todoList: Todo[] = [] as Todo[];
+  todoTitle: string = '';
 
   constructor() {}
 
@@ -36,14 +37,15 @@ export class TodoService {
     }
   }
 
-  createTodo(title: string): void {
+  createTodo(): void {
     let newTodo: Todo = {
       userId: 1,
       id: this.dataLimit + 1,
-      title: title,
+      title: this.todoTitle,
       completed: false,
     };
 
     this.todoList.unshift(newTodo);
+    this.todoTitle = '';
   }
 }

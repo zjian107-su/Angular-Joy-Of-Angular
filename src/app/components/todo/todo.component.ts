@@ -8,16 +8,9 @@ import { TodoService } from './todo.service';
   styleUrl: './todo.component.css',
 })
 export class TodoComponent {
-  todoTitle: string = '';
-
   constructor(public todoService: TodoService) {}
 
   ngOnInit() {
     this.todoService.initializeTodoList();
-  }
-
-  createTodo(): void {
-    this.todoService.createTodo(this.todoTitle);
-    this.todoTitle = '';
   }
 }
