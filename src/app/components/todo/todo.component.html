@@ -22,9 +22,9 @@
 <div style="display: flex; flex-direction: row; gap: 2rem">
   <div>
     <dl>
-      <dd *ngFor="let todo of todoList">
+      <dd *ngFor="let todo of this.todoService.todoList">
         <span [ngStyle]="todo.completed? {'text-decoration': 'line-through'}:{'font-weight': 'bold'}"
-          (click)="toggleComplete(todo)">{{todo.title}}
+          (click)="this.todoService.toggleComplete(todo)">{{todo.title}}
         </span>
       </dd>
     </dl>
