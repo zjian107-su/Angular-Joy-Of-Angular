@@ -11,27 +11,21 @@ export class TodoService {
   constructor() {}
 
   initializeTodoList(): void {
-    let finalList: Todo[] = [] as Todo[];
     this.todoList = todos.slice(0, this.dataLimit);
-    for (let currentTodo of this.todoList) {
-      if (currentTodo.completed) {
-        finalList.push(currentTodo);
-      } else {
-        finalList.unshift(currentTodo);
-      }
-    }
 
-    this.todoList = finalList;
-    this.logger('TodoComponent initialized');
-  }
-
-  logger(message: string): void {
-    console.log(message);
+    this.todoList.sort((a, b) => {
+      return a.completed === b.completed ? 0 : a.completed ? 1 : -1;
+    });
   }
 
   toggleComplete(todo: Todo): void {
     todo.completed = !todo.completed;
-    this.todoList = this.todoList.filter((item) => item !== todo);
+
+    const index = this.todoList.indexOf(todo);
+
+    if (index > -1) {
+      this.todoList.splice(index, 1);
+    }
 
     if (todo.completed) {
       //move bottom when marked as complete
