@@ -5,18 +5,28 @@ import { Todo, todos } from '../../data';
   providedIn: 'root',
 })
 export class TodoService {
-  dataLimit: number = 30;
+  // basic functionality: CRUD
   todoList: Todo[] = [] as Todo[];
+  DATA_LIMIT: number = 30;
   todoTitle: string = '';
 
-  constructor() {}
+  // advanced functionality: pagination
+  PAGE_SIZE = 5;
+  currentTodos: Todo[] = [] as Todo[];
+  page: number = 1;
+  pageList: number[] = [] as number[];
 
+  constructor() {
+    this.initializeTodoList();
+  }
+
+  // basic functionality
   initializeTodoList(): void {
-    this.todoList = todos.slice(0, this.dataLimit);
-
+    this.todoList = todos.slice(0, this.DATA_LIMIT);
     this.todoList.sort((a, b) => {
       return a.completed === b.completed ? 0 : a.completed ? 1 : -1;
     });
+    this.getTodoDetails(this.todoList);
   }
 
   toggleComplete(todo: Todo): void {
@@ -35,17 +45,45 @@ export class TodoService {
       //move top when marked as incomplete
       this.todoList.unshift(todo);
     }
+
+    this.getTodoDetails(this.todoList);
   }
 
   createTodo(): void {
     let newTodo: Todo = {
       userId: 1,
-      id: this.dataLimit + 1,
+      id: this.todoList.length + 1,
       title: this.todoTitle,
       completed: false,
     };
 
     this.todoList.unshift(newTodo);
     this.todoTitle = '';
+
+    this.getTodoDetails(this.todoList);
+  }
+
+  // advanced functionality
+  getTodoDetails(data: Todo[], currentPage: number = 1): void {
+    const pages = Math.ceil(data.length / this.PAGE_SIZE);
+    this.pageList = Array.from({ length: pages }, (v, i) => i + 1);
+    this.page = currentPage;
+    this.currentTodos = data.slice(
+      (currentPage - 1) * this.PAGE_SIZE,
+      currentPage * this.PAGE_SIZE
+    );
+  }
+
+  onClickPage(page: number): void {
+    this.getTodoDetails(this.todoList, page);
+  }
+
+  onChangePageSize(newSize: number): void {
+    this.PAGE_SIZE = newSize;
+    this.getTodoDetails(this.todoList);
+  }
+
+  isCurrentPage(page: number): boolean {
+    return this.page === page;
   }
 }

@@ -5,9 +5,7 @@
 </h2>
 
 <p>
-  Implement a todo list. You should be able to add a todo, mark it as complete, and delete it. You should also be able
-  to filter the list of todos by completed and uncompleted. New todo should be put on top, finished todo should be put
-  on bottom. You should also add strick-through. You can use the list of todos below.
+  Implement a todo list. You should be able to add a todo, mark it as complete, and delete it. You should also be able to filter the list of todos by completed and uncompleted. New todo should be put on top, finished todo should be put on bottom. You should also add strick-through. You can use the list of todos below.
 </p>
 
 <h2>
@@ -15,20 +13,28 @@
 </h2>
 
 <div [ngStyle]="{'display':'flex', 'flex-direction':'column', 'gap':'1rem'}">
+
   <div>
     <input type="text" placeholder="Get Milk" [(ngModel)]="todoService.todoTitle" />
     <button (click)="todoService.createTodo()">Add todo</button>
   </div>
-<div style="display: flex; flex-direction: row; gap: 2rem">
-  <div>
-    <dl>
-      <dd *ngFor="let todo of this.todoService.todoList">
-        <span [ngStyle]="todo.completed? {'text-decoration': 'line-through'}:{'font-weight': 'bold'}"
-          (click)="this.todoService.toggleComplete(todo)">{{todo.title}}
-        </span>
-      </dd>
-    </dl>
+
+  <div style="display: flex; flex-direction: row; gap: 2rem">
+    <div>
+      <dl>
+        <dd *ngFor="let todo of this.todoService.currentTodos">
+          <span [ngStyle]="todo.completed? {'text-decoration': 'line-through'}:{'font-weight': 'bold'}"
+            (click)="this.todoService.toggleComplete(todo)">{{todo.title}}
+          </span>
+        </dd>
+      </dl>
+    </div>
   </div>
-</div>
+
+  <div [ngStyle]="{'display': 'flex', 'flex-direction': 'row'}">
+    <div *ngFor="let page of todoService.pageList" (click)="todoService.onClickPage(page)">
+      <button [ngStyle]="todoService.isCurrentPage(page)? {'background-color':'pink'}: {'background-color':'grey'}">{{ page }}</button>
+    </div>
+  </div>
 
 </div>

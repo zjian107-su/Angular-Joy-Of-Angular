@@ -10,7 +10,4 @@ import { TodoService } from './todo.service';
 export class TodoComponent {
   constructor(public todoService: TodoService) {}
 
-  ngOnInit() {
-    this.todoService.initializeTodoList();
-  }
 }
