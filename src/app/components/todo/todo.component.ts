@@ -8,5 +8,12 @@ import { TodoService } from './todo.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoComponent {
+  todoTitle: string = '';
+
   constructor(public todoService: TodoService) {}
+
+  createTodo(): void {
+    this.todoService.createTodo(this.todoTitle);
+    this.todoTitle = '';
+  }
 }

@@ -7,11 +7,10 @@ import { Todo, todos } from '../../data';
 export class TodoService {
   // basic functionality: CRUD
   todoList: Todo[] = [] as Todo[];
-  DATA_LIMIT: number = 30;
-  todoTitle: string = '';
+  DATA_LIMIT: number = todos.length;
 
   // advanced functionality: pagination
-  PAGE_SIZE = 5;
+  PAGE_SIZE = 30;
   currentTodos: Todo[] = [] as Todo[];
   page: number = 1;
   pageList: number[] = [] as number[];
@@ -49,16 +48,15 @@ export class TodoService {
     this.getTodoDetails(this.todoList);
   }
 
-  createTodo(): void {
+  createTodo(title: string): void {
     let newTodo: Todo = {
       userId: 1,
       id: this.todoList.length + 1,
-      title: this.todoTitle,
+      title: title,
       completed: false,
     };
 
     this.todoList.unshift(newTodo);
-    this.todoTitle = '';
 
     this.getTodoDetails(this.todoList);
   }
@@ -80,7 +78,7 @@ export class TodoService {
 
   onChangePageSize(newSize: number): void {
     this.PAGE_SIZE = newSize;
-    this.getTodoDetails(this.todoList);
+    this.getTodoDetails(this.todoList, 1);
   }
 
   isCurrentPage(page: number): boolean {
