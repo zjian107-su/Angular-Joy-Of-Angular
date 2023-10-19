@@ -49,6 +49,10 @@ export class TodoService {
   }
 
   createTodo(title: string): void {
+    if (!title.trim()) {
+      return;
+    }
+
     let newTodo: Todo = {
       userId: 1,
       id: this.todoList.length + 1,
@@ -57,7 +61,6 @@ export class TodoService {
     };
 
     this.todoList.unshift(newTodo);
-
     this.getTodoDetails(this.todoList);
   }
 

@@ -16,7 +16,7 @@
 
   <div>
     <input type="text" placeholder="Get Milk" [(ngModel)]="todoTitle" />
-    <button (click)="createTodo()">Add todo</button>
+    <button (click)="createTodo() " [disabled]="!todoTitle.trim()">Add todo</button>
   </div>
 
   <div style="display: flex; flex-direction: row; gap: 2rem">
