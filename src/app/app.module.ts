@@ -9,6 +9,7 @@ import { RecursiveNavChildComponent } from './components/recursive-nav/recursive
 import { FilteredCityComponent } from './components/filtered-city/filtered-city.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { PalindromeComponent } from './components/palindrome/palindrome.component';
+import { FibonacciSequenceComponent } from './components/fibonacci-sequence/fibonacci-sequence.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PalindromeComponent } from './components/palindrome/palindrome.componen
     FilteredCityComponent,
     TodoComponent,
     PalindromeComponent,
+    FibonacciSequenceComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
