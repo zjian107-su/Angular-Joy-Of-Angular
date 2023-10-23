@@ -1,1 +1,27 @@
-<p>fibonacci-sequence works!</p>
+<h1>Fibonacci Sequence</h1>
+
+<h2>
+  Description
+</h2>
+
+<p>
+  Implement a fibonacci sequence. You should be able to input a number and get the fibonacci sequence up to that number. You should also be able to filter the list of fibonacci numbers by even and odd. You can use the list of fibonacci numbers below.
+</p>
+
+<h2>
+  Result
+</h2>
+
+<input type="number" placeholder="10" [(ngModel)]="inputNum"  [disabled]="inputNum<0" />
+
+
+<button (click)="generateSequence()">
+Generate Fibonacci Sequence</button>
+
+<p *ngIf="hasError">Please enter a positive number</p>
+
+<dl>
+  <dd *ngFor="let num of fibonacciSequence">
+    {{num}}
+  </dd>
+</dl>

@@ -4,6 +4,7 @@ import { RecursiveNavComponent } from './components/recursive-nav/recursive-nav.
 import { FilteredCityComponent } from './components/filtered-city/filtered-city.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { PalindromeComponent } from './components/palindrome/palindrome.component';
+import { FibonacciSequenceComponent } from './components/fibonacci-sequence/fibonacci-sequence.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'palindrome',
     component: PalindromeComponent,
+  },
+  {
+    path: 'fibonacci',
+    component: FibonacciSequenceComponent,
   },
 ];
 
