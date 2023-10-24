@@ -12,7 +12,7 @@
   Result
 </h2>
 
-<input type="number" placeholder="10" [(ngModel)]="inputNum"  [disabled]="inputNum<0" />
+<input type="number" placeholder="Enter a number" [(ngModel)]="inputNum" min="1" />
 
 
 <button (click)="generateSequence()">
