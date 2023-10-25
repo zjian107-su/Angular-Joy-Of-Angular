@@ -18,6 +18,7 @@ export class FibonacciSequenceComponent {
     this.hasError = false;
     if (this.inputNum <= 0) {
       this.hasError = true;
+      console.log('error detected');
       return;
     }
     this.fibonacciSequence = this.fiboService.fibonacciGen(this.inputNum);

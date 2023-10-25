@@ -18,7 +18,10 @@
 <button (click)="generateSequence()">
 Generate Fibonacci Sequence</button>
 
-<p *ngIf="hasError">Please enter a positive number</p>
+<div *ngIf="hasError">
+  <p [ngStyle]="{'background-color':'pink'}">Please enter a positive number</p>
+</div>
+
 
 <dl>
   <dd *ngFor="let num of fibonacciSequence">
