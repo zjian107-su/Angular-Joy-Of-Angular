@@ -10,6 +10,7 @@ export class FibonacciSequenceComponent {
   fibonacciSequence: number[] = [] as number[];
   inputNum: number = 0;
   hasError: boolean = false;
+  isLoading: boolean = false;
 
   constructor(private fiboService: FiboService) {}
 
@@ -21,6 +22,11 @@ export class FibonacciSequenceComponent {
       console.log('error detected');
       return;
     }
-    this.fibonacciSequence = this.fiboService.fibonacciGen(this.inputNum);
+    this.isLoading = true;
+    setTimeout(() => {
+      this.fibonacciSequence = this.fiboService.fibonacciGen(this.inputNum);
+      console.log('DANIEL');
+      this.isLoading = false;
+    }, 1000);
   }
 }

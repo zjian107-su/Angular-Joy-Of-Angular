@@ -22,6 +22,8 @@ Generate Fibonacci Sequence</button>
   <p [ngStyle]="{'background-color':'pink'}">Please enter a positive number</p>
 </div>
 
+<div *ngIf="isLoading" Class='loading-spinner'></div>
+
 
 <dl>
   <dd *ngFor="let num of fibonacciSequence">
