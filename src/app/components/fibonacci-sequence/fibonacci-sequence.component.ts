@@ -25,7 +25,6 @@ export class FibonacciSequenceComponent {
     this.isLoading = true;
     setTimeout(() => {
       this.fibonacciSequence = this.fiboService.fibonacciGen(this.inputNum);
-      console.log('DANIEL');
       this.isLoading = false;
     }, 1000);
   }
