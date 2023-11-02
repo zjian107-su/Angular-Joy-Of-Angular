@@ -5,14 +5,14 @@
 </h2>
 
 <p>
-  This is a simple counter component that uses a timer to increment a count with setInterval.
+  This is a simple counter component that uses a timer to increment a count with setInterval. Then try to use rxjs to emit values from the timer and subscribe to it in the component.The data will only change when it is a multiplier of 2, for example 2, 4, 6, 8, etc.
 </p>
 
 <h2>
   Result
 </h2>
 
-<h3>Count: {{count}}</h3>
+<h3>Count: {{processedCount}}</h3>
 
 <div [ngStyle]="{'display': 'flex','gap':'1rem' }">
 <button (click)="toggleTimer()">Toggle Timer</button>
