@@ -10,6 +10,7 @@ import { FilteredCityComponent } from './components/filtered-city/filtered-city.
 import { TodoComponent } from './components/todo/todo.component';
 import { PalindromeComponent } from './components/palindrome/palindrome.component';
 import { FibonacciSequenceComponent } from './components/fibonacci-sequence/fibonacci-sequence.component';
+import { CounterComponent } from './components/counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FibonacciSequenceComponent } from './components/fibonacci-sequence/fibo
     TodoComponent,
     PalindromeComponent,
     FibonacciSequenceComponent,
+    CounterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

@@ -1,0 +1,21 @@
+<h1>Counter</h1>
+
+<h2>
+  Description
+</h2>
+
+<p>
+  This is a simple counter component that uses a timer to increment a count with setInterval.
+</p>
+
+<h2>
+  Result
+</h2>
+
+<h3>Count: {{count}}</h3>
+
+<div [ngStyle]="{'display': 'flex','gap':'1rem' }">
+<button (click)="toggleTimer()">Toggle Timer</button>
+<br/>
+<button (click)="reset()">Reset All</button>
+</div>
