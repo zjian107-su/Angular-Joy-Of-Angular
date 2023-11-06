@@ -79,9 +79,12 @@ export class TodoService {
     this.getTodoDetails(this.todoList, page);
   }
 
-  onChangePageSize(newSize: number): void {
-    this.PAGE_SIZE = newSize;
-    this.getTodoDetails(this.todoList, 1);
+  onChangePageSize(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    if (target && target.value) {
+      this.PAGE_SIZE = Number(target.value);
+      this.getTodoDetails(this.todoList, 1);
+    }
   }
 
   isCurrentPage(page: number): boolean {
