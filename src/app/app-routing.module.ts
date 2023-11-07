@@ -6,6 +6,7 @@ import { TodoComponent } from './components/todo/todo.component';
 import { PalindromeComponent } from './components/palindrome/palindrome.component';
 import { FibonacciSequenceComponent } from './components/fibonacci-sequence/fibonacci-sequence.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { VoteSystemComponent } from './components/vote-system/vote-system.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'counter',
     component: CounterComponent,
+  },
+  {
+    path: 'vote-system',
+    component: VoteSystemComponent,
   },
 ];
 

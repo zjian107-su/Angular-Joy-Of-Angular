@@ -11,6 +11,7 @@ import { TodoComponent } from './components/todo/todo.component';
 import { PalindromeComponent } from './components/palindrome/palindrome.component';
 import { FibonacciSequenceComponent } from './components/fibonacci-sequence/fibonacci-sequence.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { VoteSystemComponent } from './components/vote-system/vote-system.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CounterComponent } from './components/counter/counter.component';
     PalindromeComponent,
     FibonacciSequenceComponent,
     CounterComponent,
+    VoteSystemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

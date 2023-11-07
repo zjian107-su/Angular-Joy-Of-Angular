@@ -1,0 +1,35 @@
+<h1>
+  Vote System
+</h1>
+
+<h2>
+  Description
+</h2>
+
+<p>
+  The highest vote will get highlighted with a yellow background, and you can upvote and downvote each candidate. You can also add a new candidate to the list. The list of candidates is below.
+</p>
+<p>
+  Component design and lifecycle, data handling and manipulation, template building and directive, event handling, form handling, styling and state management.
+</p>
+
+<h2>
+  Result
+</h2>
+
+<input type="text" placeHolder="TEXT INPUT HERE" [(ngModel)]="inputText" />
+<button (click)="addCandidate(inputText)" [disabled]="inputText.length<1">Submit</button>
+
+<dl>
+  <dt>
+    <h3>Candidate List and Votes</h3>
+  </dt>
+  <dd *ngFor="let candidate of candidates; index as i">
+    <span [ngStyle]="{'background-color': i === 0? 'yellow': 'white'}">
+    ID: {{candidate.id}} VOTES: {{candidate.votes}} TEXT: {{candidate.text}}
+    </span>
+
+    <button (click)="upVote(candidate)">Up Vote</button>
+    <button (click)="downVote(candidate)">Down Vote</button>
+  </dd>
+</dl>
