@@ -7,6 +7,7 @@ import { PalindromeComponent } from './components/palindrome/palindrome.componen
 import { FibonacciSequenceComponent } from './components/fibonacci-sequence/fibonacci-sequence.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { VoteSystemComponent } from './components/vote-system/vote-system.component';
+import { CustomDirectiveComponent } from './components/custom-directive/custom-directive.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'vote-system',
     component: VoteSystemComponent,
+  },
+  {
+    path: 'custom-directives',
+    component: CustomDirectiveComponent,
   },
 ];
 
