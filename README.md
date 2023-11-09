@@ -2,9 +2,9 @@
 
 <<<<<<< HEAD
 ## [**Live Demo on Netlify**](https://daniel-joy-of-angular.netlify.app/) 
-Current progress: Custom Directives and Custome Validators are not included. However, almost evrything else is here. 
+Current progress: Custom Directives and Custom Validators are not included. However, almost everything else is here. 
 
-This a project refactory: [**Original Link**](https://daniel-angular-exercise.netlify.app/)
+This a project refactor: [**Original Link**](https://daniel-angular-exercise.netlify.app/)
 
 =======
 [**Live Demo**](https://daniel-joy-of-angular.netlify.app/)
