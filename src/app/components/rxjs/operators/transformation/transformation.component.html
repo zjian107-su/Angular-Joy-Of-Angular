@@ -1,0 +1,47 @@
+<h4>Transformation Operators</h4>
+    <button
+      (click)="concatMapSubscribe()"
+      [ngStyle]="{ border: concatMapShow ? '1px solid red' : '' }"
+    >
+      Concat Map
+    </button>
+    <button
+      (click)="exhaustMapSubscribe()"
+      [ngStyle]="{ border: exhaustMapShow ? '1px solid red' : '' }"
+    >
+      Exhaust Map
+    </button>
+    <button
+      (click)="mergeMapSubscribe()"
+      [ngStyle]="{ border: mergeMapShow ? '1px solid red' : '' }"
+    >
+      Merge Map
+    </button>
+    <button
+      (click)="switchMapSubscribe()"
+      [ngStyle]="{ border: switchMapShow ? '1px solid red' : '' }"
+    >
+      Switch Map
+    </button>
+
+    <div>
+      <ng-container *ngIf="concatMapShow">
+        <h3>Concat Map</h3>
+        <div *ngFor="let value of concatMapValues">{{ value }}</div>
+      </ng-container>
+
+      <ng-container *ngIf="exhaustMapShow">
+        <h3>Exhaust Map</h3>
+        <div *ngFor="let value of exhaustMapValues">{{ value }}</div>
+      </ng-container>
+
+      <ng-container *ngIf="mergeMapShow">
+        <h3>Merge Map</h3>
+        <div *ngFor="let value of mergeMapValues">{{ value }}</div>
+      </ng-container>
+
+      <ng-container *ngIf="switchMapShow">
+        <h3>Switch Map</h3>
+        <div *ngFor="let value of switchMapValues">{{ value }}</div>
+      </ng-container>
+    </div>

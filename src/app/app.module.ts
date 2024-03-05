@@ -15,6 +15,16 @@ import { VoteSystemComponent } from './components/vote-system/vote-system.compon
 import { CustomDirectiveComponent } from './components/custom-directive/custom-directive.component';
 import { StructuralComponent } from './components/custom-directive/structural/structural.component';
 import { AttributeComponent } from './components/custom-directive/attribute/attribute.component';
+import { RxjsComponent } from './components/rxjs/rxjs.component';
+import { ObservablesComponent } from './components/rxjs/observables/observables.component';
+import { OperatorsComponent } from './components/rxjs/operators/operators.component';
+import { SubjectsComponent } from './components/rxjs/subjects/subjects.component';
+import { ErrorHandlingComponent } from './components/rxjs/operators/error-handling/error-handling.component';
+import { FilteringComponent } from './components/rxjs/operators/filtering/filtering.component';
+import { JoinCreationComponent } from './components/rxjs/operators/join-creation/join-creation.component';
+import { OtherOperatorsComponent } from './components/rxjs/operators/other-operators/other-operators.component';
+import { TransformationComponent } from './components/rxjs/operators/transformation/transformation.component';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +40,15 @@ import { AttributeComponent } from './components/custom-directive/attribute/attr
     CustomDirectiveComponent,
     StructuralComponent,
     AttributeComponent,
+    RxjsComponent,
+    ObservablesComponent,
+    OperatorsComponent,
+    SubjectsComponent,
+    ErrorHandlingComponent,
+    FilteringComponent,
+    JoinCreationComponent,
+    OtherOperatorsComponent,
+    TransformationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

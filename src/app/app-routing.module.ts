@@ -8,6 +8,10 @@ import { FibonacciSequenceComponent } from './components/fibonacci-sequence/fibo
 import { CounterComponent } from './components/counter/counter.component';
 import { VoteSystemComponent } from './components/vote-system/vote-system.component';
 import { CustomDirectiveComponent } from './components/custom-directive/custom-directive.component';
+import { RxjsComponent } from './components/rxjs/rxjs.component';
+import { ObservablesComponent } from './components/rxjs/observables/observables.component';
+import { OperatorsComponent } from './components/rxjs/operators/operators.component';
+import { SubjectsComponent } from './components/rxjs/subjects/subjects.component';
 
 const routes: Routes = [
   {
@@ -41,6 +45,24 @@ const routes: Routes = [
   {
     path: 'custom-directives',
     component: CustomDirectiveComponent,
+  },
+  {
+    path: 'rxjs',
+    component: RxjsComponent,
+    children: [
+      {
+        path: 'observables',
+        component: ObservablesComponent,
+      },
+      {
+        path: 'operators',
+        component: OperatorsComponent,
+      },
+      {
+        path: 'subjects',
+        component: SubjectsComponent,
+      },
+    ],
   },
 ];
 

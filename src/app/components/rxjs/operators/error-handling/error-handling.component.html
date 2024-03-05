@@ -1,0 +1,23 @@
+<h4>Error Handling Operators</h4>
+    <button
+      (click)="catchErrorSubscribe()"
+      [ngStyle]="{ border: showCatchError ? '1px solid red' : '' }"
+    >
+      Catch Error
+    </button>
+    <button
+      (click)="retrySubscribe()"
+      [ngStyle]="{ border: showRetry ? '1px solid red' : '' }"
+    >
+      Retry
+    </button>
+
+    <div>
+      <ng-container *ngIf="showCatchError">
+        <p>Catch Error Values: {{ catchErrorValues | json }}</p>
+      </ng-container>
+
+      <ng-container *ngIf="showRetry">
+        <p>Retry Values: {{ retryValues | json }}</p>
+      </ng-container>
+    </div>

@@ -1,0 +1,52 @@
+<h1>Subjects</h1>
+    <button
+      (click)="subjectSubscribe()"
+      [ngStyle]="{ border: subjectShow ? '1px solid red' : '' }"
+    >
+      Subject
+    </button>
+    <button
+      (click)="behaviorSubjectSubscribe1()"
+      [ngStyle]="{ border: behaviorSubjectShow ? '1px solid red' : '' }"
+    >
+      Behavior Subject
+    </button>
+
+    <div>
+      <!-- Subject -->
+      <ng-container *ngIf="subjectShow">
+        <h3>Subject</h3>
+        <p>
+          Subscription 1 value:
+          {{ subjectValue1 !== null ? subjectValue1 : 'No Value Yet' }}
+        </p>
+        <p>
+          Subscription 2 value:
+          {{ subjectValue2 !== null ? subjectValue2 : 'No Value Yet' }}
+        </p>
+        <button (click)="subjectIncrement()">Increment</button>
+      </ng-container>
+
+      <!-- Behavior Subject -->
+      <ng-container *ngIf="behaviorSubjectShow">
+        <h3>Behavior Subject</h3>
+        <p>
+          Subscription 1 value:
+          {{
+            behaviorSubjectValue1 !== null
+              ? behaviorSubjectValue1
+              : 'No Value Yet'
+          }}
+        </p>
+        <p>
+          Subscription 2 value:
+          {{
+            behaviorSubjectValue2 !== null
+              ? behaviorSubjectValue2
+              : 'No Value Yet'
+          }}
+        </p>
+        <button (click)="behaviorSubjectIncrement()">Increment</button>
+        <button (click)="behaviorSubjectSubscribe2()">Subscribe 2</button>
+      </ng-container>
+    </div>

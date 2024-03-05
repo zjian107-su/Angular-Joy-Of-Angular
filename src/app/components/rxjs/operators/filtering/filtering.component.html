@@ -1,0 +1,63 @@
+<h4>Filtering Operators</h4>
+    <button
+      (click)="filterSubscribe()"
+      [ngStyle]="{ border: filterShow ? '1px solid red' : '' }"
+    >
+      filter
+    </button>
+    <button
+      (click)="firstLastSubscribe()"
+      [ngStyle]="{ border: firstLastShow ? '1px solid red' : '' }"
+    >
+      first/last
+    </button>
+    <button
+      (click)="elementAtSubscribe()"
+      [ngStyle]="{ border: elementAtShow ? '1px solid red' : '' }"
+    >
+      elementAt
+    </button>
+    <button
+      (click)="debounceTimeSubscribe()"
+      [ngStyle]="{ border: debounceTimeShow ? '1px solid red' : '' }"
+    >
+      debounceTime
+    </button>
+    <button
+      (click)="throttleTimeSubscribe()"
+      [ngStyle]="{ border: throttleTimeShow ? '1px solid red' : '' }"
+    >
+      throttleTime
+    </button>
+
+    <div>
+      <ng-container *ngIf="filterShow">
+        <h3>Filter</h3>
+        <p>Filter Values: {{ filterValues | json }}</p>
+      </ng-container>
+
+      <ng-container *ngIf="firstLastShow">
+        <h3>First/Last</h3>
+        <p>First Value: {{ firstValue }}</p>
+        <p>Last Value: {{ lastValue }}</p>
+      </ng-container>
+
+      <ng-container *ngIf="elementAtShow">
+        <h3>ElementAt</h3>
+        <p>Element At 5 Value: {{ elementAtValue }}</p>
+      </ng-container>
+
+      <ng-container *ngIf="debounceTimeShow">
+        <h3>DebounceTime</h3>
+        <p>Click Anywhere!</p>
+        <p>Actual number of clicks: {{ normalClickValue }}</p>
+        <p>Debounced number of clicks: {{ debounceTimeValue }}</p>
+      </ng-container>
+
+      <ng-container *ngIf="throttleTimeShow">
+        <h3>ThrottleTime</h3>
+        <div *ngFor="let value of throttleTimeValues">
+          {{ value }}
+        </div>
+      </ng-container>
+    </div>

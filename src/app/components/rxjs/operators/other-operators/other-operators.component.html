@@ -1,0 +1,41 @@
+<h4>
+      {{
+        tapShow || everyShow || findShow
+          ? tapShow
+            ? 'Utility Operators'
+            : 'Conditional Operators'
+          : 'Other Operators'
+      }}
+    </h4>
+    <button
+      (click)="tapSubscribe()"
+      [ngStyle]="{ border: tapShow ? '1px solid red' : '' }"
+    >
+      Tap
+    </button>
+    <button
+      (click)="everySubscribe()"
+      [ngStyle]="{ border: everyShow ? '1px solid red' : '' }"
+    >
+      Every
+    </button>
+    <button
+      (click)="findSubscribe()"
+      [ngStyle]="{ border: findShow ? '1px solid red' : '' }"
+    >
+      Find
+    </button>
+
+    <div>
+      <ng-container *ngIf="tapShow">
+        <p>Check the console for the values</p>
+      </ng-container>
+
+      <ng-container *ngIf="everyShow">
+        <p>Every value is greater than 2: {{ everyValue }}</p>
+      </ng-container>
+
+      <ng-container *ngIf="findShow">
+        <p>First value greater than 2: {{ findValue }}</p>
+      </ng-container>
+    </div>

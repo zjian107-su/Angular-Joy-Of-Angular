@@ -1,0 +1,39 @@
+<h4>Join Creation Operators</h4>
+    <button
+      (click)="concatSubscribe()"
+      [ngStyle]="{ border: concatShow ? '1px solid red' : '' }"
+    >
+      Concat
+    </button>
+    <button
+      (click)="mergeSubscribe()"
+      [ngStyle]="{ border: mergeShow ? '1px solid red' : '' }"
+    >
+      Merge
+    </button>
+    <button
+      (click)="forkJoinSubscribe()"
+      [ngStyle]="{ border: forkJoinShow ? '1px solid red' : '' }"
+    >
+      Fork Join
+    </button>
+
+    <div>
+      <!-- Concat -->
+      <ng-container *ngIf="concatShow">
+        <h3>Concat</h3>
+        <div *ngFor="let value of concatValues">{{ value }}</div>
+      </ng-container>
+
+      <!-- Merge -->
+      <ng-container *ngIf="mergeShow">
+        <h3>Merge</h3>
+        <div *ngFor="let value of mergeValues">{{ value }}</div>
+      </ng-container>
+
+      <!-- Fork Join -->
+      <ng-container *ngIf="forkJoinShow">
+        <h3>Fork Join</h3>
+        <div>{{ forkJoinValue }}</div>
+      </ng-container>
+    </div>

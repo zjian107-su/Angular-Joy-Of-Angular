@@ -1,0 +1,101 @@
+<h1>Observables</h1>
+    <button
+      (click)="observableSubscribe()"
+      [ngStyle]="{ border: observableShow ? '1px solid red' : '' }"
+    >
+      Observable
+    </button>
+    <button
+      (click)="ofSubscribe()"
+      [ngStyle]="{ border: ofShow ? '1px solid red' : '' }"
+    >
+      Of
+    </button>
+    <button
+      (click)="fromSubscribe()"
+      [ngStyle]="{ border: fromShow ? '1px solid red' : '' }"
+    >
+      From
+    </button>
+    <button
+      (click)="fromPromiseSubscribe()"
+      [ngStyle]="{ border: fromPromiseShow ? '1px solid red' : '' }"
+    >
+      From Promise
+    </button>
+    <button
+      (click)="fromEventSubscribe()"
+      [ngStyle]="{ border: fromEventShow ? '1px solid red' : '' }"
+    >
+      From Event
+    </button>
+    <button
+      (click)="intervalSubscribe()"
+      [ngStyle]="{ border: intervalShow ? '1px solid red' : '' }"
+    >
+      Interval
+    </button>
+    <button
+      (click)="timerSubscribe()"
+      [ngStyle]="{ border: timerShow ? '1px solid red' : '' }"
+    >
+      Timer
+    </button>
+
+    <div>
+      <!-- Observable -->
+      <ng-container *ngIf="observableShow">
+        <h3>Observable</h3>
+        <p>Final value: {{ observableFinalValue }}</p>
+        <p>All values: {{ observableAllValues | json }}</p>
+      </ng-container>
+
+      <!-- Of -->
+      <ng-container *ngIf="ofShow">
+        <h3>Of</h3>
+        <p>Final value: {{ ofFinalValue }}</p>
+        <p>All values: {{ ofAllValues | json }}</p>
+      </ng-container>
+
+      <!-- From -->
+      <ng-container *ngIf="fromShow">
+        <h3>From</h3>
+        <p>Final value: {{ fromFinalValue }}</p>
+        <p>All values: {{ fromAllValues | json }}</p>
+      </ng-container>
+
+      <!-- From a Promise -->
+      <ng-container *ngIf="fromPromiseShow">
+        <h3>From Promise</h3>
+        <p>Final value: {{ fromPromiseFinalValue }}</p>
+      </ng-container>
+
+      <!-- FromEvent -->
+      <ng-container *ngIf="fromEventShow">
+        <h3>From Event</h3>
+        <p>
+          Client X: {{ fromEventValue.clientX }}
+          <br />
+          Client Y: {{ fromEventValue.clientY }}
+        </p>
+        <p>
+          fromEvent is a <b>hot observable</b> because the data is produced
+          outside of this observable which is the pointer position values in our
+          case
+        </p>
+      </ng-container>
+
+      <!-- Interval -->
+      <ng-container *ngIf="intervalShow">
+        <h3>Interval</h3>
+        <p>Value: {{ intervalValue }}</p>
+      </ng-container>
+
+      <!-- Timer -->
+      <ng-container *ngIf="timerShow">
+        <h3>Timer</h3>
+        <p>Value: {{ timerValue === null ? 'No Value Yet' : timerValue }}</p>
+        <p>Time Start: {{ timeStart | date : 'medium' }}</p>
+        <p>Time End: {{ timeEnd | date : 'medium' }}</p>
+      </ng-container>
+    </div>
