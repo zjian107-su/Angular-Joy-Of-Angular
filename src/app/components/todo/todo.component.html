@@ -5,7 +5,7 @@
 </h2>
 
 <p>
-  Implement a todo list. You should be able to add a todo, mark it as complete, and delete it. You should also be able to filter the list of todos by completed and uncompleted. New todo should be put on top, finished todo should be put on bottom. You should also add strick-through. You can use the list of todos below.
+  Implement a todo list. You should be able to add a todo, mark it as complete, and delete it. You should also be able to filter the list of todos by completed and uncompleted. New todo should be put on top, finished todo should be put on bottom. DescriptionYou should also add strick-through. You can use the list of todos below. it includes page-navigation, page-size, and todo list. You can use the list of todos below. it includes page-navigation, page-size, and todo list.
 </p>
 
 <h2>
@@ -26,6 +26,12 @@
     <option value=50 >50</option>
   </select>
 
+  <div [ngStyle]="{'display': 'flex', 'flex-direction': 'row'}">
+    <div *ngFor="let page of todoService.pageList" (click)="todoService.onClickPage(page)">
+      <button [ngStyle]="todoService.isCurrentPage(page)? {'background-color':'pink'}: {'background-color':'grey'}">{{ page }}</button>
+    </div>
+  </div>
+
   <div style="display: flex; flex-direction: row; gap: 2rem">
     <div>
       <dl>
@@ -38,10 +44,6 @@
     </div>
   </div>
 
-  <div [ngStyle]="{'display': 'flex', 'flex-direction': 'row'}">
-    <div *ngFor="let page of todoService.pageList" (click)="todoService.onClickPage(page)">
-      <button [ngStyle]="todoService.isCurrentPage(page)? {'background-color':'pink'}: {'background-color':'grey'}">{{ page }}</button>
-    </div>
-  </div>
+  
 
 </div>
