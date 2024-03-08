@@ -12,6 +12,7 @@ import { RxjsComponent } from './components/rxjs/rxjs.component';
 import { ObservablesComponent } from './components/rxjs/observables/observables.component';
 import { OperatorsComponent } from './components/rxjs/operators/operators.component';
 import { SubjectsComponent } from './components/rxjs/subjects/subjects.component';
+import { NgrxComponent } from './components/ngrx/ngrx.component';
 
 const routes: Routes = [
   {
@@ -63,6 +64,10 @@ const routes: Routes = [
         component: SubjectsComponent,
       },
     ],
+  },
+  {
+    path: 'ngrx',
+    component: NgrxComponent,
   },
 ];
 

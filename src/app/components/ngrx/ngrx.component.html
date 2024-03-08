@@ -1,0 +1,24 @@
+<h1>NGRX</h1>
+
+<h2>
+  Description
+</h2>
+
+<p>
+  This todo app used HttpModule to fetch data from a server. This app uses NGRX to manage the state of the application. NGRX is a redux-inspired library that helps manage the state of the application. It uses a single source of truth to manage the state of the application.
+</p>
+
+<h2>
+  Result
+</h2>
+
+<div class="container">
+  <app-add-todo [lastTodoId]="todoIds[todoIds.length - 1]"></app-add-todo>
+  <app-search (handleSearch)="handleSearch($event)"></app-search>
+  <div class="container">
+    <app-todo-item
+      *ngFor="let todoId of todoIds"
+      [todoId]="todoId"
+    ></app-todo-item>
+  </div>
+</div>

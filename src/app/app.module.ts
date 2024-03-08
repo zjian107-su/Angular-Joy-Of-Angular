@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -24,7 +25,16 @@ import { FilteringComponent } from './components/rxjs/operators/filtering/filter
 import { JoinCreationComponent } from './components/rxjs/operators/join-creation/join-creation.component';
 import { OtherOperatorsComponent } from './components/rxjs/operators/other-operators/other-operators.component';
 import { TransformationComponent } from './components/rxjs/operators/transformation/transformation.component';
+import { NgrxComponent } from './components/ngrx/ngrx.component';
+import { AddTodoComponent } from './components/ngrx/components/add-todo/add-todo.component';
+import { SearchComponent } from './components/ngrx/components/search/search.component';
+import { TodoItemComponent } from './components/ngrx/components/todo-item/todo-item.component';
 
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { todoReducer } from './components/ngrx/store/todo/todo.reducer';
+import { TodoEffects } from './components/ngrx/store/todo/todo.effects';
 
 @NgModule({
   declarations: [
@@ -49,8 +59,20 @@ import { TransformationComponent } from './components/rxjs/operators/transformat
     JoinCreationComponent,
     OtherOperatorsComponent,
     TransformationComponent,
+    NgrxComponent,
+    AddTodoComponent,
+    SearchComponent,
+    TodoItemComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    StoreModule.forRoot({ todo: todoReducer }), // Register your reducers, the key represents the name of the slice of state in the store (used when creating feature selectors)
+    EffectsModule.forRoot([TodoEffects]), // Register your effects
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }), // enabling NgRx devtools, which you can then use the Redux devtools in your browser to check the states and actions
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

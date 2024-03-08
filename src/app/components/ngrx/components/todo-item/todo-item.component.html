@@ -1,0 +1,18 @@
+<div [ngStyle]="{ border: '1px solid grey', padding: '1em' }">
+      <h3>{{ todo.id + ' - ' + todo.title }}</h3>
+      <button (click)="deleteTodo()">Delete</button>
+      <button (click)="toggleTodo()">
+        {{ todo.completed ? 'Mark as Incomplete' : 'Mark as Complete' }}
+      </button>
+      <button (click)="toggleEdit()">Edit Todo</button>
+
+      <div *ngIf="showEdit">
+        <input
+          type="text"
+          [(ngModel)]="title"
+          name="title"
+        />
+        <button (click)="editTodo()">Save</button>
+        <button (click)="toggleEdit()">Cancel</button>
+      </div>
+    </div>
