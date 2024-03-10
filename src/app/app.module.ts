@@ -47,6 +47,7 @@ import { ObservableCountComponent } from './components/observable-count/observab
 import { ObservableListComponent } from './components/observable-list/observable-list.component';
 import { FilterSearchComponent } from './components/filter-search/filter-search.component';
 import { FormComponent } from './components/form/form.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { FormComponent } from './components/form/form.component';
     ObservableListComponent,
     FilterSearchComponent,
     FormComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

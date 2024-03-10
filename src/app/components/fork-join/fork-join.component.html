@@ -1,1 +1,34 @@
-<p>fork-join works! Check the console then refresh the page  </p>
+<h1>Counter</h1>
+
+<h2>
+  Description
+</h2>
+
+<p>
+  This component will demonstrate the difference between merge and forkJoin
+</p>
+
+<h2>
+  Result
+</h2>
+
+<br>
+
+<h4>fork-join works! Check the console then refresh the page  </h4>
+<div class="container">
+  <h4>merge</h4>
+  <ul>
+      <li>Combines multiple observables into one.</li>
+      <li>Emits values from all input observables as they occur.</li>
+      <li>Continues to emit values as long as any input observable is still emitting.</li>
+      <li>Completes only when all input observables have completed.</li>
+  </ul>
+
+  <h4>forkJoin</h4>
+  <ul>
+      <li>Combines multiple observables into one.</li>
+      <li>Waits for all input observables to complete.</li>
+      <li>Emits the last emitted value from each input observable as an array or object.</li>
+      <li>Completes immediately after emitting this single value.</li>
+  </ul>
+</div>
