@@ -1,0 +1,21 @@
+<h1>Swap</h1>
+
+<h2>
+  Description
+</h2>
+
+<p>
+  Algorithm question of how to swap items in a list efficiently. This is a simple swap component that swaps the position of the elements in the array. The user can click on the box to swap the middle position of the elements in the array.
+</p>
+
+<h2>
+  Result
+</h2>
+
+<div class="flex">
+<div *ngFor="let item of tempData; let i = index" >
+  <div class="box" (click)="swap(i)">
+    <span ngClass="custom-text">{{item.text}}</span>
+  </div>
+</div>
+</div>

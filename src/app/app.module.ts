@@ -35,6 +35,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { todoReducer } from './components/ngrx/store/todo/todo.reducer';
 import { TodoEffects } from './components/ngrx/store/todo/todo.effects';
+import { SwapComponent } from './components/swap/swap.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { TodoEffects } from './components/ngrx/store/todo/todo.effects';
     AddTodoComponent,
     SearchComponent,
     TodoItemComponent,
+    SwapComponent,
   ],
   imports: [
     BrowserModule,

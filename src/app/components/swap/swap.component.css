@@ -1,0 +1,26 @@
+.flex{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between
+}
+
+.box{
+    display: flex;
+    justify-content: center; /* centers content horizontally */
+    align-items: center;
+    height: 200px;
+    width: 80px;
+    background-color: magenta
+}
+
+.box:hover {
+    background-color: green;
+}
+
+/* Apply styles to elements with the class "custom-text" */
+.custom-text {
+    font-size: 30px; /* Change this value to adjust the font size */
+    font-weight: bold; /* Change this value to adjust the font weight */
+}
