@@ -1,0 +1,19 @@
+<h1>Tab With Child</h1>
+
+<h2>
+  Description
+</h2>
+
+<p>
+  This exercises includes Input keyword and data structure. The user can click on the tabs to see the content of the tab. The content of the tab is displayed in the child component. The next follow up question could be using ViewChild to communicate between the parent and child component.
+</p>
+
+<h2>
+  Result
+</h2>
+
+<button *ngFor="let tab of tabs" (click)="onClick(tab)">
+  {{tab.label}}
+</button>
+
+<app-child [data]="expandedTab"></app-child>

@@ -36,6 +36,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { todoReducer } from './components/ngrx/store/todo/todo.reducer';
 import { TodoEffects } from './components/ngrx/store/todo/todo.effects';
 import { SwapComponent } from './components/swap/swap.component';
+import { TabsWithChildComponent } from './components/tabs-with-child/tabs-with-child.component';
+import { ChildComponent } from './components/tabs-with-child/components/child/child.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { SwapComponent } from './components/swap/swap.component';
     SearchComponent,
     TodoItemComponent,
     SwapComponent,
+    TabsWithChildComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,

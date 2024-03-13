@@ -14,6 +14,7 @@ import { OperatorsComponent } from './components/rxjs/operators/operators.compon
 import { SubjectsComponent } from './components/rxjs/subjects/subjects.component';
 import { NgrxComponent } from './components/ngrx/ngrx.component';
 import { SwapComponent } from './components/swap/swap.component';
+import { TabsWithChildComponent } from './components/tabs-with-child/tabs-with-child.component';
 
 const routes: Routes = [
   {
@@ -73,6 +74,10 @@ const routes: Routes = [
   {
     path: 'swap',
     component: SwapComponent,
+  },
+  {
+    path: 'tab-with-child',
+    component: TabsWithChildComponent,
   },
 ];
 
