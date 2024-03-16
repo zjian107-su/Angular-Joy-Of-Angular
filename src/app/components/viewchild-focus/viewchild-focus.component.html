@@ -1,0 +1,23 @@
+<h1>ViewChild</h1>
+
+<h2>
+  Description
+</h2>
+
+<p>
+  The parent can access all the child's methods. In this example, the parent can access the child's input box and focus on it.
+</p>
+
+<h2>
+  Result
+</h2>
+
+<br>
+
+
+<app-viewchild-child #child></app-viewchild-child>
+<br>
+
+<button (click)="focusOnChildInput()">Click to focus</button>
+
+<p>After click the focus button, your focus will be guided back tot the input box</p>

@@ -1,6 +1,7 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'; // for Todo Component
+import { ReactiveFormsModule } from '@angular/forms'; // for ViewChild component
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -38,6 +39,8 @@ import { TodoEffects } from './components/ngrx/store/todo/todo.effects';
 import { SwapComponent } from './components/swap/swap.component';
 import { TabsWithChildComponent } from './components/tabs-with-child/tabs-with-child.component';
 import { ChildComponent } from './components/tabs-with-child/components/child/child.component';
+import { ViewchildFocusComponent } from './components/viewchild-focus/viewchild-focus.component';
+import { ViewChildChildComponent } from './components/viewchild-focus/components/viewchild-child/viewchild-child.component';
 
 @NgModule({
   declarations: [
@@ -69,10 +72,13 @@ import { ChildComponent } from './components/tabs-with-child/components/child/ch
     SwapComponent,
     TabsWithChildComponent,
     ChildComponent,
+    ViewchildFocusComponent,
+    ViewChildChildComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
     StoreModule.forRoot({ todo: todoReducer }), // Register your reducers, the key represents the name of the slice of state in the store (used when creating feature selectors)
