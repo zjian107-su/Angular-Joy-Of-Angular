@@ -4,7 +4,6 @@ import { ViewChildChildComponent } from './components/viewchild-child/viewchild-
 @Component({
   selector: 'app-viewchild-focus',
   templateUrl: './viewchild-focus.component.html',
-  styleUrl: './viewchild-focus.component.css',
 })
 export class ViewchildFocusComponent {
   @ViewChild(ViewChildChildComponent) childComponent!: ViewChildChildComponent;

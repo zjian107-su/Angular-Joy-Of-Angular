@@ -41,6 +41,9 @@ import { TabsWithChildComponent } from './components/tabs-with-child/tabs-with-c
 import { ChildComponent } from './components/tabs-with-child/components/child/child.component';
 import { ViewchildFocusComponent } from './components/viewchild-focus/viewchild-focus.component';
 import { ViewChildChildComponent } from './components/viewchild-focus/components/viewchild-child/viewchild-child.component';
+import { UuidComponent } from './components/uuid/uuid.component';
+import { ForkJoinComponent } from './components/fork-join/fork-join.component';
+
 
 @NgModule({
   declarations: [
@@ -74,6 +77,8 @@ import { ViewChildChildComponent } from './components/viewchild-focus/components
     ChildComponent,
     ViewchildFocusComponent,
     ViewChildChildComponent,
+    UuidComponent,
+    ForkJoinComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,7 @@ import { NgrxComponent } from './components/ngrx/ngrx.component';
 import { SwapComponent } from './components/swap/swap.component';
 import { TabsWithChildComponent } from './components/tabs-with-child/tabs-with-child.component';
 import { ViewchildFocusComponent } from './components/viewchild-focus/viewchild-focus.component';
+import { UuidComponent } from './components/uuid/uuid.component';
 
 const routes: Routes = [
   {
@@ -83,6 +84,10 @@ const routes: Routes = [
   {
     path: 'viewchild',
     component: ViewchildFocusComponent,
+  },
+  {
+    path: 'uuid',
+    component: UuidComponent,
   },
 ];
 
