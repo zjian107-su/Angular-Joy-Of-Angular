@@ -17,7 +17,9 @@ import { SwapComponent } from './components/swap/swap.component';
 import { TabsWithChildComponent } from './components/tabs-with-child/tabs-with-child.component';
 import { ViewchildFocusComponent } from './components/viewchild-focus/viewchild-focus.component';
 import { UuidComponent } from './components/uuid/uuid.component';
+import { ForkJoinComponent } from './components/fork-join/fork-join.component';
 
+// Routing can make the application more user-friendly and easier to navigate. Not even mentioning the SEO benefits and lazy loading. For example, if we don't plan to initiate all the ngOnInit at once, we can use lazy loading to load the components only when the user navigates to them. This way, the application will load faster and be more efficient.
 const routes: Routes = [
   {
     path: 'recursive-nav',
@@ -88,6 +90,10 @@ const routes: Routes = [
   {
     path: 'uuid',
     component: UuidComponent,
+  },
+  {
+    path: 'fork-join',
+    component: ForkJoinComponent,
   },
 ];
 
