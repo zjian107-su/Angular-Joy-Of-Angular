@@ -43,7 +43,7 @@ import { ViewchildFocusComponent } from './components/viewchild-focus/viewchild-
 import { ViewChildChildComponent } from './components/viewchild-focus/components/viewchild-child/viewchild-child.component';
 import { UuidComponent } from './components/uuid/uuid.component';
 import { ForkJoinComponent } from './components/fork-join/fork-join.component';
-
+import { ObservableCountComponent } from './components/observable-count/observable-count.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +79,7 @@ import { ForkJoinComponent } from './components/fork-join/fork-join.component';
     ViewChildChildComponent,
     UuidComponent,
     ForkJoinComponent,
+    ObservableCountComponent,
   ],
   imports: [
     BrowserModule,
