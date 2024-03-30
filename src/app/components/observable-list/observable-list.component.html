@@ -1,0 +1,23 @@
+<h1>List with Observable</h1>
+
+<h2>
+  Description
+</h2>
+
+<p>
+  This component will generate a list of items with observable. It has a button to add an item to the list and a button to show all the items in the list.
+</p>
+
+<h2>
+  Result
+</h2>
+
+<br>
+
+<ul>
+  <li *ngFor="let item of allItemsObs$ | async">
+    {{ item | json}}
+  </li>
+</ul>
+<button (click)="addItem()">CLICK ME to ADD item</button>
+<button (click)="showItems()">CLICK ME to SHOW items</button>
