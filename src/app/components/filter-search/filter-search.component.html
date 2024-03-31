@@ -1,0 +1,22 @@
+<h1>Counter</h1>
+
+<h2>
+  Description
+</h2>
+
+<p>
+  This component will generate a list of todos and filter the todos based on the search input. This is a very standard exercises for beginners to understand how to filter the list of items based on the search input.
+</p>
+
+<h2>
+  Result
+</h2>
+
+<form (ngSubmit)="handleSubmit()">
+  <input type="text" [(ngModel)]="search" name="search">
+  <button type="submit">Search</button>
+</form>
+
+<ul>
+  <li *ngFor="let todo of filteredTodos">{{todo.title}}</li>
+</ul>

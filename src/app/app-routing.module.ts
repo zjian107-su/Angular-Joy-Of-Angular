@@ -20,6 +20,7 @@ import { UuidComponent } from './components/uuid/uuid.component';
 import { ForkJoinComponent } from './components/fork-join/fork-join.component';
 import { ObservableCountComponent } from './components/observable-count/observable-count.component';
 import { ObservableListComponent } from './components/observable-list/observable-list.component';
+import { FilterSearchComponent } from './components/filter-search/filter-search.component';
 
 // Routing can make the application more user-friendly and easier to navigate. Not even mentioning the SEO benefits and lazy loading. For example, if we don't plan to initiate all the ngOnInit at once, we can use lazy loading to load the components only when the user navigates to them. This way, the application will load faster and be more efficient.
 const routes: Routes = [
@@ -104,6 +105,10 @@ const routes: Routes = [
   {
     path: 'observable-list',
     component: ObservableListComponent,
+  },
+  {
+    path: 'filter-search',
+    component: FilterSearchComponent,
   },
 ];
 

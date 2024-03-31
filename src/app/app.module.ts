@@ -45,6 +45,7 @@ import { UuidComponent } from './components/uuid/uuid.component';
 import { ForkJoinComponent } from './components/fork-join/fork-join.component';
 import { ObservableCountComponent } from './components/observable-count/observable-count.component';
 import { ObservableListComponent } from './components/observable-list/observable-list.component';
+import { FilterSearchComponent } from './components/filter-search/filter-search.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { ObservableListComponent } from './components/observable-list/observable
     ForkJoinComponent,
     ObservableCountComponent,
     ObservableListComponent,
+    FilterSearchComponent,
   ],
   imports: [
     BrowserModule,
