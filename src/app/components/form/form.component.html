@@ -1,0 +1,40 @@
+<h1>Counter</h1>
+
+<h2>
+  Description
+</h2>
+
+<p>
+  This form exercise will create a form with name, email, password, and confirm password. The form will validate the password and confirm password to make sure they are the same. If the form is valid, it will show the form value in JSON format. It uses formGroup and formControlName to create the form. Very basic form interview question
+</p>
+
+<h2>
+  Result
+</h2>
+
+<br>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name</label>
+  <input type="text" formControlName="userName" required>
+
+  <label for="email">Email</label>
+  <input type="email" formControlName="email">
+
+  <label for="password">Password</label>
+  <input type="password" formControlName="password" required>
+
+  <label for="confirmPassword">Confirm Password</label>
+  <input type="password" formControlName="verifyPassword" required>
+
+  <button type="submit">Submit</button>
+
+</form>
+
+<p *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
+  Password is required
+</p>
+<p *ngIf="registerForm.valid && submitted && registerForm.controls['email'].value !=='' && registerForm.controls['userName'].value
+  !==''">
+  {{ registerForm.value | json}}
+</p>
