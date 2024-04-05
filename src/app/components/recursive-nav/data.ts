@@ -1,27 +1,27 @@
 export const data: Nav[] = [
   {
     id: 1,
-    name: 'John Doe',
+    name: 'Experience',
   },
   {
     id: 2,
-    name: 'Jane Doe',
+    name: 'Activities',
     children: [
       {
         id: 3,
-        name: 'John Smith',
+        name: 'Ice Skate',
       },
       {
         id: 4,
-        name: 'Jane Smith',
+        name: 'Dance',
         children: [
           {
             id: 5,
-            name: 'John Doe',
+            name: 'Bachata',
           },
           {
             id: 6,
-            name: 'Jane Doe',
+            name: 'Salsa',
           },
         ],
       },
@@ -29,21 +29,21 @@ export const data: Nav[] = [
   },
   {
     id: 7,
-    name: 'John Smith',
+    name: 'Viedeo Games',
     children: [
       {
         id: 8,
-        name: 'Jane Smith',
+        name: 'League of Legends',
       },
       {
         id: 9,
-        name: 'John Doe',
+        name: 'Overwatch',
       },
     ],
   },
   {
     id: 10,
-    name: 'Jane Doe',
+    name: 'Pets',
   },
 ];
 

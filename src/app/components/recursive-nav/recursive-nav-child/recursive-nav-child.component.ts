@@ -9,6 +9,7 @@ import { Nav } from '../data';
 export class RecursiveNavChildComponent {
   @Input() data: Nav[] = [];
 
+  // cleverly use expand even though it's not in the data model
   toggleExpand(item: Nav): void {
     item.expanded = !item.expanded;
   }
