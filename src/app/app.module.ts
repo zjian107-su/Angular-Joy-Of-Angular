@@ -47,7 +47,8 @@ import { ObservableCountComponent } from './components/observable-count/observab
 import { ObservableListComponent } from './components/observable-list/observable-list.component';
 import { FilterSearchComponent } from './components/filter-search/filter-search.component';
 import { FormComponent } from './components/form/form.component';
-import { LayoutComponent } from './components/layout/layout.component';
+import { LayoutCssComponent } from './components/layout-css/layout-css.component';
+import { LayoutCssChildComponent } from './components/layout-css/components/layout-css-child/layout-css-child.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { LayoutComponent } from './components/layout/layout.component';
     ObservableListComponent,
     FilterSearchComponent,
     FormComponent,
-    LayoutComponent,
+    LayoutCssComponent,
+    LayoutCssChildComponent,
   ],
   imports: [
     BrowserModule,
