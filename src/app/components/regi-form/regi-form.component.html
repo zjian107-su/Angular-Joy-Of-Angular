@@ -1,0 +1,54 @@
+<h1>Registration Form</h1>
+
+<h2>
+  Description
+</h2>
+
+<p>
+  This component will generate a registration form with nested form groups. It has a button to toggle the order of the users. It also has a list of users with their details. In addition, there is a custom validator. The follow up question could be editing the existing user and adding a new user.
+</p>
+
+<h2>
+  Result
+</h2>
+
+<button (click)="us.toggleOrder()" class="btn-flat">Toggle Order</button>
+
+<h3>Signup Form</h3>
+<form [formGroup]="regiForm" (ngSubmit)="logFormValue()">
+  <input type="text" placeholder="id" formControlName="id" />
+  <input type="text" placeholder="name" formControlName="name" />
+  <div [ngStyle]="{backgroundColor: 'red', width: '30%'}">First Letter un-capitalized!</div>
+  <div formGroupName="address">
+    <input type="text" placeholder="street" formControlName="street" />
+    <input type="text" placeholder="city" formControlName="city" />
+    <div formGroupName="geo">
+      <input type="text" placeholder="lat" formControlName="lat" />
+      <input type="text" placeholder="lng" formControlName="lng" />
+    </div>
+  </div>
+  <input type="reset" />
+
+  <button type="submit">Submit</button>
+</form>
+
+
+<ng-container *ngFor="let user of us.users">
+  <h3>ID: {{user.id}}, Name: {{user.name}}</h3>
+
+  <dl>
+    <dt>Username:</dt>
+    <dd>{{user.name}}</dd>
+
+    <dt>Address:</dt>
+    <dd>{{user.address.street}}, {{user.address.city}}, {{user.address.geo.lat}},
+      {{user.address.geo.lng}}</dd>
+
+    <dt>Phone:</dt>
+    <dd>{{user.phone}}</dd>
+
+    <dt>Website:</dt>
+    <dd><a href="http://{{user.website}}">{{user.website}}</a></dd>
+  </dl>
+  <br />
+</ng-container>

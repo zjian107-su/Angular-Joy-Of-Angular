@@ -49,6 +49,7 @@ import { FilterSearchComponent } from './components/filter-search/filter-search.
 import { FormComponent } from './components/form/form.component';
 import { LayoutCssComponent } from './components/layout-css/layout-css.component';
 import { LayoutCssChildComponent } from './components/layout-css/components/layout-css-child/layout-css-child.component';
+import { RegiFormComponent } from './components/regi-form/regi-form.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { LayoutCssChildComponent } from './components/layout-css/components/layo
     FormComponent,
     LayoutCssComponent,
     LayoutCssChildComponent,
+    RegiFormComponent,
   ],
   imports: [
     BrowserModule,
