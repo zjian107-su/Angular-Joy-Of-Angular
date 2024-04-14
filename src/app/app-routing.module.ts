@@ -23,6 +23,10 @@ import { ObservableListComponent } from './components/observable-list/observable
 import { FilterSearchComponent } from './components/filter-search/filter-search.component';
 import { LayoutCssComponent } from './components/layout-css/layout-css.component';
 import { RegiFormComponent } from './components/regi-form/regi-form.component';
+import { InterceptorGuardComponent } from './components/interceptor-guard/interceptor-guard.component';
+import { InterceptorFormComponent } from './components/interceptor-guard/components/interceptor-form/interceptor-form.component';
+import { InterceptorListComponent } from './components/interceptor-guard/components/interceptor-list/interceptor-list.component';
+import { AuthGuard } from './components/interceptor-guard/guards/user-guard.guard';
 
 // Routing can make the application more user-friendly and easier to navigate. Not even mentioning the SEO benefits and lazy loading. For example, if we don't plan to initiate all the ngOnInit at once, we can use lazy loading to load the components only when the user navigates to them. This way, the application will load faster and be more efficient.
 const routes: Routes = [
@@ -119,6 +123,21 @@ const routes: Routes = [
   {
     path: 'regi-form',
     component: RegiFormComponent,
+  },
+  {
+    path: 'interceptor-guard',
+    component: InterceptorGuardComponent,
+    children: [
+      {
+        path: 'form',
+        component: InterceptorFormComponent,
+      },
+      {
+        path: 'list',
+        component: InterceptorListComponent,
+        canActivate: [AuthGuard], // interceptor guard
+      },
+    ],
   },
 ];
 

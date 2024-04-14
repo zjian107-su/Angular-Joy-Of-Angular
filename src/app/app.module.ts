@@ -50,6 +50,9 @@ import { FormComponent } from './components/form/form.component';
 import { LayoutCssComponent } from './components/layout-css/layout-css.component';
 import { LayoutCssChildComponent } from './components/layout-css/components/layout-css-child/layout-css-child.component';
 import { RegiFormComponent } from './components/regi-form/regi-form.component';
+import { InterceptorGuardComponent } from './components/interceptor-guard/interceptor-guard.component';
+import { InterceptorFormComponent } from './components/interceptor-guard/components/interceptor-form/interceptor-form.component';
+import { InterceptorListComponent } from './components/interceptor-guard/components/interceptor-list/interceptor-list.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +95,9 @@ import { RegiFormComponent } from './components/regi-form/regi-form.component';
     LayoutCssComponent,
     LayoutCssChildComponent,
     RegiFormComponent,
+    InterceptorGuardComponent,
+    InterceptorFormComponent,
+    InterceptorListComponent,
   ],
   imports: [
     BrowserModule,

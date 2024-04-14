@@ -1,0 +1,15 @@
+<dl *ngFor="let user of listService.users">
+  <dt>
+    <h2>{{user.name}}</h2>
+  </dt>
+  <dd>
+    <dl *ngFor="let post of listService.posts">
+      <div *ngIf="post.userId === user.id">
+        <dt>
+          <h3>{{post.title}}</h3>
+        </dt>
+        <dd>{{post.body}}</dd>
+      </div>
+    </dl>
+  </dd>
+</dl>

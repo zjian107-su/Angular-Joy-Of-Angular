@@ -1,0 +1,14 @@
+<p>interceptor-form works!</p>
+<form [formGroup]="signForm" (ngSubmit)="logService.checkValidLogIn(signForm.value.name, signForm.value.password)">
+  <label for="name">Name</label>
+  <input type="text" placeholder="Name" formControlName="name">
+  <div *ngIf="nameControl?.hasError('notCapitalized')" [ngStyle]="{color: 'red'}">
+    The input should start with a capitalized character
+  </div>
+  <label for="password">Password</label>
+  <input type="text" placeholder="password" formControlName="password">
+
+  <button type="submit">Log In</button>
+</form>
+
+<button (click)="clear()">Clear</button>
