@@ -1,0 +1,14 @@
+<h1> Subject Theme </h1>
+
+<h2>Description</h2>
+
+<p>
+  This component demonstrates the use of a subject to change the theme of the application. The theme is toggled between light and dark colors. The theme is stored in the state and is updated using the subject. The theme is then applied to the application using the async pipe.
+</p>
+
+
+<h2>Result</h2>
+
+<h3>{{sts.theme | async}}</h3>
+<br>
+<button (click)="sts.toggleTheme()">Toggle to change the theme color</button>
