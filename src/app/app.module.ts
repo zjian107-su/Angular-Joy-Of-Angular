@@ -53,6 +53,7 @@ import { RegiFormComponent } from './components/regi-form/regi-form.component';
 import { InterceptorGuardComponent } from './components/interceptor-guard/interceptor-guard.component';
 import { InterceptorFormComponent } from './components/interceptor-guard/components/interceptor-form/interceptor-form.component';
 import { InterceptorListComponent } from './components/interceptor-guard/components/interceptor-list/interceptor-list.component';
+import { ProgressiveTodoComponent } from './components/progressive-todo/progressive-todo.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { InterceptorListComponent } from './components/interceptor-guard/compone
     InterceptorGuardComponent,
     InterceptorFormComponent,
     InterceptorListComponent,
+    ProgressiveTodoComponent,
   ],
   imports: [
     BrowserModule,

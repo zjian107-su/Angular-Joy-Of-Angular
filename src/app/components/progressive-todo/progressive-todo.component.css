@@ -1,0 +1,22 @@
+body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .directory-tree, .features, .future-features {
+      margin-bottom: 20px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    ul li {
+      background: #eee;
+      margin-bottom: 5px;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }

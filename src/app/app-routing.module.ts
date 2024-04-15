@@ -27,6 +27,7 @@ import { InterceptorGuardComponent } from './components/interceptor-guard/interc
 import { InterceptorFormComponent } from './components/interceptor-guard/components/interceptor-form/interceptor-form.component';
 import { InterceptorListComponent } from './components/interceptor-guard/components/interceptor-list/interceptor-list.component';
 import { AuthGuard } from './components/interceptor-guard/guards/user-guard.guard';
+import { ProgressiveTodoComponent } from './components/progressive-todo/progressive-todo.component';
 
 // Routing can make the application more user-friendly and easier to navigate. Not even mentioning the SEO benefits and lazy loading. For example, if we don't plan to initiate all the ngOnInit at once, we can use lazy loading to load the components only when the user navigates to them. This way, the application will load faster and be more efficient.
 const routes: Routes = [
@@ -138,6 +139,10 @@ const routes: Routes = [
         canActivate: [AuthGuard], // interceptor guard
       },
     ],
+  },
+  {
+    path: 'progressive-todo',
+    component: ProgressiveTodoComponent,
   },
 ];
 
